@@ -1,0 +1,125 @@
+package com.innouni.health.activity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.innouni.health.app.MainApplication;
+import com.innouni.health.base.BaseActivity;
+import com.innouni.health.entity.UserInfo;
+import com.innouni.health.net.HttpPostRequest;
+
+/**
+ * 修改个签
+ * 
+ * @author HuGuojun
+ * @date 2014-1-20 下午4:15:31
+ * @modify
+ * @version 1.0.0
+ */
+public class ModifySignActivity extends BaseActivity implements OnClickListener {
+
+	private ProgressDialog dialog;
+	private String nick;
+	private EditText nickText;
+	private ModifyTask task;
+	private UserInfo user;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_modify_sign);
+		application = MainApplication.getApplication();
+		application.setActivity(this);
+		user = application.getUserInfo();
+		initView();
+	}
+
+	private void initView() {
+		titleLeftBtn = (TextView) findViewById(R.id.btn_title_left);
+		titleContentView = (TextView) findViewById(R.id.txt_title_center);
+		titleRightBtn = (TextView) findViewById(R.id.btn_title_right);
+		titleLeftBtn.setOnClickListener(this);
+		titleContentView.setText("修改个性签名");
+		titleRightBtn.setOnClickListener(this);
+		titleRightBtn.setBackgroundResource(R.drawable.titlebar_finish_selector);
+
+		nickText = (EditText) findViewById(R.id.edit_modify);
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btn_title_left:
+			finish();
+			break;
+		case R.id.btn_title_right:
+			nick = nickText.getText().toString();
+				if (task != null) {
+					task.cancel(true);
+				}
+				task = new ModifyTask();
+				task.execute();
+			break;
+		}
+	}
+
+	private class ModifyTask extends AsyncTask<Void, Void, String> {
+		@Override
+		protected void onPreExecute() {
+			showDialog();
+		}
+
+		@Override
+		protected String doInBackground(Void... params) {
+			List<NameValuePair> pairs = new ArrayList<NameValuePair>();
+			pairs.add(new BasicNameValuePair("token", user.getToken()));
+			pairs.add(new BasicNameValuePair("mId", user.getId()));
+			pairs.add(new BasicNameValuePair("signature", nick));
+			return HttpPostRequest.getDataFromWebServer(
+					ModifySignActivity.this, "editMemberSignature", pairs);
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			System.out.println("修改返回 : " + result);
+			dialog.dismiss();
+			task = null;
+			try {
+				JSONObject object = new JSONObject(result);
+				int status = object.optInt("status");
+				if (status == 0) {
+					showToast(R.string.modify_success);
+					user.setSign(nick);
+					finish();
+				} else {
+					showToast(R.string.modify_fail);
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+				showToast(R.string.net_error);
+			}
+		}
+	}
+
+	private void showDialog() {
+		dialog = new ProgressDialog(this);
+		dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		dialog.setMessage(getResources().getString(R.string.net_submiting));
+		dialog.setIndeterminate(false);
+		dialog.setCancelable(true);
+		dialog.show();
+	}
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.innouni.health.widget.PullToRefreshView
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/my_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@null"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none" />
+    </com.innouni.health.widget.PullToRefreshView>
+
+    <include
+        android:id="@+id/lay_load_fail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/app_nodata_layout"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/app_title_bar"/>
+
+    <Button
+        android:id="@+id/btn_health_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_middle_click"
+        android:drawableRight="@drawable/list_arrow_selector"
+        android:gravity="left|center_vertical"
+        android:text="健康资讯"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_environment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_middle_click"
+        android:drawableRight="@drawable/list_arrow_selector"
+        android:gravity="left|center_vertical"
+        android:text="环境监测"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_expert_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_middle_click"
+        android:drawableRight="@drawable/list_arrow_selector"
+        android:gravity="left|center_vertical"
+        android:text="专家列表"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+    
+    <Button
+        android:id="@+id/btn_opinion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_middle_click"
+        android:drawableRight="@drawable/list_arrow_selector"
+        android:gravity="left|center_vertical"
+        android:text="指导信息"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+</LinearLayout>

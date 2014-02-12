@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/app_title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RadioGroup
+            android:id="@+id/group_sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/sport_friend_bottom_bar"
+            android:orientation="horizontal"
+            android:paddingTop="5dp" >
+
+            <RadioButton
+                android:id="@+id/radio_sport"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:checked="true"
+                android:button="@null"
+                android:drawableTop="@drawable/radio_sport_selector"
+                android:gravity="center"
+                android:text="运动"
+                android:textColor="@color/radion_tab_txt_color"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/radio_suggest"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/radio_suggest_selector"
+                android:gravity="center"
+                android:text="建议"
+                android:textColor="@color/radion_tab_txt_color"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/radio_set"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/radio_set_selector"
+                android:gravity="center"
+                android:text="常规"
+                android:textColor="@color/radion_tab_txt_color"
+                android:textSize="15sp" />
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/lay_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/group_sport"
+            android:orientation="vertical" />
+    </RelativeLayout>
+
+    <android.support.v4.app.FragmentTabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0" />
+    </android.support.v4.app.FragmentTabHost>
+
+</LinearLayout>

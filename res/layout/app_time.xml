@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/time_bg" >
+
+    <TextView
+        android:id="@+id/txt_time_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/time_back_selector" />
+
+    <TextView
+        android:id="@+id/txt_time_predict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/time_next_selector" />
+
+    <TextView
+        android:id="@+id/txt_time_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/txt_time_predict"
+        android:layout_toRightOf="@id/txt_time_preview"
+        android:gravity="center"
+        android:text="今日"
+        android:textColor="#666666"
+        android:textSize="18sp" />
+
+</RelativeLayout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <include layout="@layout/app_title_bar" />
+
+    <com.innouni.health.widget.ReboundScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/lay_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_center_item_selector"
+                android:clickable="true"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/image_user_avatar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/txt_user_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:layout_toRightOf="@id/image_user_avatar"
+                    android:gravity="center"
+                    android:textColor="#333333"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/iamge_user_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/txt_user_nick"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/txt_user_nick" />
+
+                <TextView
+                    android:id="@+id/txt_user_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/txt_user_nick"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/image_user_avatar"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_user_account_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/txt_user_nick"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/txt_user_account"
+                    android:gravity="center"
+                    android:textColor="#0072BD" />
+
+                <TextView
+                    android:id="@+id/txt_user_sign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/txt_user_account"
+                    android:layout_toRightOf="@id/image_user_avatar"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_user_sign_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/txt_user_account"
+                    android:layout_toRightOf="@id/txt_user_sign"
+                    android:gravity="center"
+                    android:textColor="#666666" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_health_info"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/user_center_item_selector"
+                android:drawableLeft="@drawable/icon_health_info"
+                android:drawableRight="@drawable/list_arrow_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="   健康信息"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btn_user_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/user_center_item_selector"
+                android:drawableLeft="@drawable/icon_recommend"
+                android:drawableRight="@drawable/list_arrow_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="   我的推荐"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color" />
+
+            <Button
+                android:id="@+id/btn_user_favorite"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/user_center_item_selector"
+                android:drawableLeft="@drawable/icon_collect"
+                android:drawableRight="@drawable/list_arrow_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="   我的收藏"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color" />
+
+            <Button
+                android:id="@+id/btn_user_menu"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/user_center_item_selector"
+                android:drawableLeft="@drawable/icon_menu"
+                android:drawableRight="@drawable/list_arrow_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="   我的菜谱"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btn_active_unit_member"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/user_center_item_selector"
+                android:drawableLeft="@drawable/icon_code"
+                android:drawableRight="@drawable/list_arrow_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="   激活单位会员"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btn_exit_account"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/exit_btn_selector"
+                android:gravity="center"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </com.innouni.health.widget.ReboundScrollView>
+
+</LinearLayout>

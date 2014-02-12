@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <!-- 半透明 -->
+    <color name="translucent">#80858175</color>
+    <!-- 黑色 -->
+    <color name="black">#000000</color>
+    <!-- 深灰 -->
+    <color name="dark_gray">#FF444444</color>
+    <!-- 灰色 -->
+    <color name="gray">#FF888888</color>
+    <!-- 浅灰色 -->
+    <color name="light_gray">#FFCCCCCC</color>
+    <!-- 灰白色 -->
+    <color name="dark_white">#858585</color>
+    <!-- 白色 -->
+    <color name="white">#FFFFFFFF</color>
+    <!-- 淡橘色 -->
+    <color name="light_orange">#936639</color>
+    <!-- 橘红色 -->
+    <color name="orange_red">#E41616</color>
+    <!-- 橘色 -->
+    <color name="orange">#C26019</color>
+    <!-- 暗黄色 -->
+    <color name="dark_yellow">#E99323</color>
+    <!-- 红色 -->
+    <color name="red">#FF0000</color>
+    <!-- 蓝色 -->
+    <color name="blue">#396E8C</color>
+    <!-- 淡蓝色 -->
+    <color name="light_blue">#3399FF</color>
+    <!-- 绿色 -->
+    <color name="green">#23990B</color>
+    <!-- 浅黑色 -->
+    <color name="light_black">#BDC7D8</color>
+    <!-- 棕色 -->
+    <color name="brown">#663300</color>
+    <!-- 淡黑色 -->
+    <color name="might_black">#212121</color>
+    <!-- 接近黑色 -->
+    <color name="dight_black">#222222</color>
+    <!-- 接近白色 -->
+    <color name="dight_white">#FFFFEE</color>
+    <!-- 深橘色 -->
+    <color name="dark_orange">#663300</color>
+    <!-- 马鞍棕色 -->
+    <color name="saddle_brown">#8B4513</color>
+    <!-- 暗淡的灰色 -->
+    <color name="dim_gray">#696969</color>
+    <!-- 灰色边 -->
+    <color name="gray_dim">#C8BECC</color>
+    <!-- 背景颜色 -->
+    <color name="bg_color">#F0EFF5</color>
+    <!-- 分割线颜色 -->
+    <color name="divider_color">#999999</color>
+
+    <!-- ZXing -->
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="help_button_view">#ffcccccc</color>
+    <color name="help_view">#ff404040</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_image_border">#ffffffff</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="sbc_header_text">#ff808080</color>
+    <color name="sbc_header_view">#ffffffff</color>
+    <color name="sbc_list_item">#fffff0e0</color>
+    <color name="sbc_layout_view">#ffffffff</color>
+    <color name="sbc_page_number_text">#ff000000</color>
+    <color name="sbc_snippet_text">#ff4b4b4b</color>
+    <color name="share_text">#ff000000</color>
+    <color name="share_view">#ffffffff</color>
+    <color name="status_view">#50000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+
+</resources>

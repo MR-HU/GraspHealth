@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/app_title_bar" />
+
+    <RadioGroup
+        android:id="@+id/radio_member_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_male"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_gender_left_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="先生"
+            android:textColor="@color/radion_button_txt_color" />
+
+        <RadioButton
+            android:id="@+id/radio_female"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_gender_right_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="女士"
+            android:textColor="@color/radion_button_txt_color" />
+    </RadioGroup>
+
+</LinearLayout>

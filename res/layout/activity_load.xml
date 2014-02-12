@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/app_title_bar" />
+
+    <Button
+        android:id="@+id/btn_health_account_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/normal_load_btn_white"
+        android:gravity="center"
+        android:text="@string/load_health_account"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_qq_account_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/normal_load_btn"
+        android:drawableLeft="@drawable/icon_qq"
+        android:gravity="center"
+        android:text="@string/load_qq_account"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_sina_account_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/normal_load_btn"
+        android:drawableLeft="@drawable/icon_sina"
+        android:gravity="center"
+        android:text="@string/load_sina_account"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</LinearLayout>

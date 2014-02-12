@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include 
+        android:id="@+id/lay_title_bar"        layout="@layout/app_title_bar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:flipInterval="30"
+            android:persistentDrawingCache="animation" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/ad_translucent_bg" >
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/page_indicator_main"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                app:fillColor="@color/white"
+                app:pageColor="#A2AFA1"
+                app:strokeWidth="0.5dp"
+                app:strokeColor="@color/translucent"
+                app:radius="3dp" />
+
+            <TextView
+                android:id="@+id/txt_ad_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_toLeftOf="@id/page_indicator_main"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textSize="13sp"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/group_energy_show_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_type_calory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_colory_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="卡路里"
+            android:textColor="@color/radion_button_txt_color" />
+
+        <RadioButton
+            android:id="@+id/radio_type_chart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_chart_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="柱状图"
+            android:textColor="@color/radion_button_txt_color" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/lay_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

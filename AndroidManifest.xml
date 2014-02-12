@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.innouni.health.activity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READER_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:name="com.innouni.health.app.MainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.innouni.health.activity.FirstLoadActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ZXing -->
+        <activity
+            android:name="com.zijunlin.Zxing.Demo.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity android:name=".RegisterStepOneActivity" />
+        <activity android:name=".RegisterStepTwoActivity" />
+        <activity android:name=".RegisterStepThreeActivity" />
+        <activity android:name=".RegisterStepFourActivity" />
+        <activity android:name=".ProtocalActivity" />
+        <activity android:name=".LoadActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".PartnerActivity" />
+        <activity android:name=".GetPwdBackActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".UserCenterActivity" />
+        <activity android:name=".UserInfoActivity" />
+        <activity android:name=".HealthInfoActivity" />
+        <activity android:name=".RecommendActivity" />
+        <activity android:name=".RecommendDetailActivity" />
+        <activity android:name=".CollectionActivity" />
+        <activity android:name=".DishDetailActivity" />
+        <activity android:name=".CookBookActivity" />
+        <activity android:name=".CodeActiveActivity" />
+        <activity android:name=".AddCookBookActivity" />
+        <activity android:name=".AddIngredientsActivity" />
+        <activity android:name=".FoodTrackActivity" />
+        <activity android:name=".FoodTrackChartActivity" />
+        <activity android:name=".AddDietStepOneActivity" />
+        <activity android:name=".AddDietStepTwoActivity" />
+        <activity android:name=".AddDietStepThreeActivity" />
+        <activity android:name=".AddDietStepFourActivity" />
+        <activity android:name=".AddDietStepFiveActivity" />
+        <activity android:name=".AddDietDishDetailActivity" />
+        <activity android:name=".NutitionChartActivity" />
+        <activity android:name=".SportFriendActivity" />
+        <activity android:name=".SportFriendChartActivity" />
+        <activity android:name=".AddSportStepOneActivity" />
+        <activity android:name=".AddSportStepTwoActivity" />
+        <activity android:name=".SuggestDetailActivity" />
+        <activity android:name=".AddSportByCommomActivity" />
+        <activity android:name=".ModifyNickActivity" />
+        <activity android:name=".ModifyEmailActivity" />
+        <activity android:name=".ModifyPhoneActivity" />
+        <activity android:name=".ModifyPwdActivity" />
+        <activity android:name=".ModifyGenderActivity" />
+        <activity android:name=".ModifyLocationActivity" />
+        <activity android:name=".ModifySignActivity" />
+        <activity android:name=".ModifyBirthActivity" />
+        <activity android:name=".ModifyHeightActivity" />
+        <activity android:name=".ModifyWeightActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".FeedBackActivity" />
+        <activity android:name=".HealthCenterActivity" />
+        <activity android:name=".HealthNewsActivity" />
+        <activity android:name=".EnvironmentActivity" />
+        <activity android:name=".ExpertsActivity" />
+        <activity android:name=".HealthNewsDetailActivity" />
+        <activity android:name=".OpinionActivity" />
+        <activity android:name=".OpinionDetailActivity" />
+        <activity android:name=".MessageActivity" />
+        
+    </application>
+
+</manifest>
