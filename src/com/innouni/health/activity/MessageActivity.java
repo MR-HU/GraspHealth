@@ -53,6 +53,7 @@ public class MessageActivity extends BaseActivity implements OnClickListener {
 	private GetMessageTask task;
 	private SendMessageTask sendTask;
 
+	private String content;
 	private String userImage, expertImage;
 	private String expertId, userId, expertName;
 	private UserInfo user;
@@ -95,12 +96,12 @@ public class MessageActivity extends BaseActivity implements OnClickListener {
 		mListView = (ListView) findViewById(R.id.my_listview);
 		mListView.setHeaderDividersEnabled(false);
 		mListView.setFooterDividersEnabled(false);
-		mListView.setStackFromBottom(true);
 
 		adapter = new MessageAdapter(this);
 		adapter.setUserImage(userImage);
 		adapter.setExpertImage(expertImage);
 		mListView.setAdapter(adapter);
+		mListView.setStackFromBottom(true);
 		adapter.setAbsListView(mListView);
 
 		loadFailLayout = (RelativeLayout) findViewById(R.id.lay_load_fail);
@@ -145,13 +146,13 @@ public class MessageActivity extends BaseActivity implements OnClickListener {
 	}
 
 	private void handleSendBtn() {
-		String content = contentText.getText().toString();
+		content = contentText.getText().toString();
 		if (!Util.isEmpty(content)) {
 			if (null != sendTask) {
 				sendTask.cancel(true);
 			}
 			sendTask = new SendMessageTask();
-			sendTask.execute(content);
+			sendTask.execute();
 		}
 	}
 
@@ -207,21 +208,18 @@ public class MessageActivity extends BaseActivity implements OnClickListener {
 						adapter.clear();
 					}
 					adapter.setListToFirst(result, true);
-					mListView.setSelection(adapter.getCount());
-				} else {
-					showToast(R.string.load_no_more_data);
-				}
+				} 
 			}
 			refreshView.onHeaderRefreshComplete();
 		}
 	}
 
-	private class SendMessageTask extends AsyncTask<String, Void, String> {
+	private class SendMessageTask extends AsyncTask<Void, Void, String> {
 
 		@Override
-		protected String doInBackground(String... params) {
+		protected String doInBackground(Void... params) {
 			List<NameValuePair> pairs = new ArrayList<NameValuePair>();
-			pairs.add(new BasicNameValuePair("content", params[0]));
+			pairs.add(new BasicNameValuePair("content", content));
 			pairs.add(new BasicNameValuePair("mId", userId));
 			pairs.add(new BasicNameValuePair("token", user.getToken()));
 			pairs.add(new BasicNameValuePair("expertId", expertId));
@@ -237,6 +235,10 @@ public class MessageActivity extends BaseActivity implements OnClickListener {
 				JSONObject object = new JSONObject(result);
 				if (object.optInt("status") == 0) {
 					contentText.setText(null);
+					MessageInfo message = new MessageInfo();
+					message.setContent(content);
+					message.setType("1");
+					adapter.addItem(message, true);
 				} else {
 					showToast(R.string.net_error);
 				}
@@ -274,4 +276,3 @@ public class MessageActivity extends BaseActivity implements OnClickListener {
 		}
 	}
 }
-//我勒个去去年号

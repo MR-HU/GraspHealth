@@ -1,9 +1,12 @@
 package com.innouni.health.entity;
 
 /**
- * ����ʵ����
+ * 留言实体
+ * 
  * @author HuGuojun
- * @data 2013-09-06
+ * @date 2014-2-13 下午2:43:28
+ * @modify
+ * @version 1.0.0
  */
 public class MessageInfo {
 

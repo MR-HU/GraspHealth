@@ -25,8 +25,8 @@ import com.innouni.health.net.ExecutorsImageLoader.ImageCallback;
  */
 public class MessageAdapter extends ArrayListAdapter<Object> {
 
-	private static final int TYPE_USER = 1;
-	private static final int TYPE_EXPERT = 2;
+	private static final int TYPE_USER = 0;
+	private static final int TYPE_EXPERT = 1;
 
 	private String userImage;
 	private String expertImage;
@@ -45,6 +45,9 @@ public class MessageAdapter extends ArrayListAdapter<Object> {
 		this.absListView = absListView;
 	}
 
+	//在使用ListView时,如果使用了getItemViewType,它的值一定要是从0开始计数,
+	//且要覆盖getViewTypeCount方法,
+	//并且让getViewTypeCount > getItemViewType
 	@Override
 	public int getItemViewType(int position) {
 		MessageInfo message = (MessageInfo) mList.get(position);
@@ -143,5 +146,14 @@ public class MessageAdapter extends ArrayListAdapter<Object> {
 
 	public void setExpertImage(String expertImage) {
 		this.expertImage = expertImage;
+	}
+	
+	public void addItem(MessageInfo message, boolean boo) {
+		if (mList != null) {
+			mList.add(message);
+			if (boo) {
+				notifyDataSetChanged();
+			}
+		}
 	}
 }

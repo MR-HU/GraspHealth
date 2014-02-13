@@ -65,6 +65,12 @@ public abstract class ArrayListAdapter<T> extends BaseAdapter {
 		}
 	}
 
+	/**
+	 * 把新列表加到原列表的开头
+	 * @description setListToFirst
+	 * @param list
+	 * @param boo 
+	 */
 	public void setListToFirst(List<T> list, boolean boo) {
 		this.mList.addAll(0, list);
 		if (boo) {

@@ -998,8 +998,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activie_success=0x7f0b0040;
         public static final int alter_title=0x7f0b001c;
         public static final int app_name=0x7f0b0000;
-        /**  <string name="app_url">http://192.168.1.100/zwjk_app_server/</string> 
-         */
         public static final int app_url=0x7f0b0001;
         public static final int dialog_negative=0x7f0b001e;
         public static final int dialog_positive=0x7f0b001d;
@@ -1039,7 +1037,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  修改个人信息相关 
          */
         public static final int modify_success=0x7f0b0046;
-        /**  网络相关 
+        /**  <string name="app_url">http://www.innouni.com/zwjk_app_server/</string> 
+ 网络相关 
          */
         public static final int net_data=0x7f0b0002;
         public static final int net_delete_fail=0x7f0b0009;
